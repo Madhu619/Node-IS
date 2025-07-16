@@ -56,7 +56,7 @@ MONGO_URI=your_mongodb_connection_string
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-Create a `.env.local` file in the `next-backend/` folder (for frontend secrets if needed):
+Create a `.env.local` file in the `frontend/` folder (for frontend secrets if needed):
 ```
 # No secrets needed for frontend by default
 ```
@@ -71,7 +71,7 @@ npm install
 
 **Frontend:**
 ```bash
-cd ../next-backend
+cd ../frontend
 npm install
 ```
 
@@ -85,7 +85,7 @@ npm start
 
 **Start Frontend:**
 ```bash
-cd ../next-backend
+cd ../frontend
 npm run dev
 ```
 
