@@ -63,15 +63,29 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+
+const allowedOrigins = [
+  //"https://<>.vercel.app", Update Vercel domain
+  "http://localhost:3000",
+  //"https://your-heroku-app.herokuapp.com", //Add your Heroku app domain here
+];
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Connect to MongoDB
