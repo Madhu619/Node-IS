@@ -1,15 +1,19 @@
 {
-  "name": "next-backend",
+  "name": "frontend",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://<madhu619>.github.io/<Node-IS>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "predeploy": "npm run build && npm run export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@huggingface/inference": "^4.5.1",
     "ai": "^4.3.19",
+    "gh-pages": "^6.3.0",
     "next": "^14.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
