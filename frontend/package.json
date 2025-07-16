@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://<madhu619>.github.io/<Node-IS>",
+  "homepage": "https://madhu619.github.io/Node-IS",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
