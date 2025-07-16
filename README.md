@@ -11,7 +11,7 @@ Astro Chat is a cosmic-themed chat platform powered by OpenAI, designed for mean
 
 ### How to get started?
 - Introduce yourself below! Tell us what brings you to Astro Chat and what you hope to achieve.
-- If you’re new, check out our [README]([./README.md](https://github.com/Madhu619/Node-IS/blob/main/README.md)) for setup and usage instructions.
+- If you’re new, check out our [README]([./README.md](./README.md)) for setup and usage instructions.
 - If you have a question or suggestion, start a new discussion or join an existing one.
 
 ---
