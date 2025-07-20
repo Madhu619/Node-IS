@@ -19,10 +19,6 @@ Astro Chat is a cosmic-themed chat platform powered by OpenAI, designed for mean
 ✨ **Let’s make Astro Chat a welcoming place for everyone interested in AI-powered chat and cosmic conversations!** ✨
 ```
 
-Madhu-RK: Create ReadMe for this project.
-Use emogies and more attractive for users
-
-GitHub Copilot: ```markdown
 # ✨ Astro Chat ✨
 
 Welcome to **Astro Chat** – your cosmic chat platform powered by OpenAI!  
