@@ -1,19 +1,3 @@
-// API endpoint to get all conversations for a user
-app.get("/api/conversations", async (req, res) => {
-  try {
-    const { user } = req.query;
-    if (!user) {
-      return res.status(400).json({ error: "User email required" });
-    }
-    const conversations = await Conversation.find({ user }).sort({
-      createdAt: -1,
-    });
-    res.json(conversations);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch conversations" });
-  }
-});
-// Conversation model for saving full chat sessions
 import mongoose from "mongoose";
 const conversationSchema = new mongoose.Schema({
   user: String,
@@ -31,25 +15,7 @@ const conversationSchema = new mongoose.Schema({
 const Conversation =
   mongoose.models.Conversation ||
   mongoose.model("Conversation", conversationSchema);
-// API endpoint to save a full conversation
-app.post("/api/conversations", async (req, res) => {
-  try {
-    const { user, name, messages } = req.body;
-    if (
-      !user ||
-      !messages ||
-      !Array.isArray(messages) ||
-      messages.length === 0
-    ) {
-      return res.status(400).json({ error: "Invalid conversation data" });
-    }
-    const conversation = new Conversation({ user, name, messages });
-    await conversation.save();
-    res.status(201).json({ message: "Conversation saved" });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to save conversation" });
-  }
-});
+
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
@@ -96,6 +62,42 @@ app.use("/api/users", userRoutes);
 app.use("/api/messages", messageRoutes);
 
 import { getAIResponse } from "./openai.js";
+
+// API endpoint to get all conversations for a user
+app.get("/api/conversations", async (req, res) => {
+  try {
+    const { user } = req.query;
+    if (!user) {
+      return res.status(400).json({ error: "User email required" });
+    }
+    const conversations = await Conversation.find({ user }).sort({
+      createdAt: -1,
+    });
+    res.json(conversations);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch conversations" });
+  }
+});
+
+// API endpoint to save a full conversation
+app.post("/api/conversations", async (req, res) => {
+  try {
+    const { user, name, messages } = req.body;
+    if (
+      !user ||
+      !messages ||
+      !Array.isArray(messages) ||
+      messages.length === 0
+    ) {
+      return res.status(400).json({ error: "Invalid conversation data" });
+    }
+    const conversation = new Conversation({ user, name, messages });
+    await conversation.save();
+    res.status(201).json({ message: "Conversation saved" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save conversation" });
+  }
+});
 
 // Socket.io for real-time chat
 io.on("connection", async (socket) => {
