@@ -40,21 +40,24 @@ Connect, converse, and share your insights under a virtual starry sky. 🚀🌌
 
 ### 1. **Clone the Repo**
 ```bash
-git clone https://github.com/your-username/astro-chat.git
-cd astro-chat
+git clone https://github.com/madhu619/Node-IS.git
+cd Node-IS
 ```
 
 ### 2. **Setup Environment Variables**
 
 Create a `.env` file in the `backend/` folder:
 ```
-MONGO_URI=your_mongodb_connection_string
+# backend/.env
+MONGODB_URI=your_mongodb_connection_string
 OPENAI_API_KEY=your_openai_api_key
+CLIENT_URL=https://your-frontend-url
 ```
 
 Create a `.env.local` file in the `frontend/` folder (for frontend secrets if needed):
 ```
-# No secrets needed for frontend by default
+# frontend/.env.local
+NEXT_PUBLIC_API_URL=https://node-is.onrender.com
 ```
 
 ### 3. **Install Dependencies**
@@ -88,6 +91,14 @@ npm run dev
 Visit [http://localhost:3000](http://localhost:3000) to start your cosmic journey! 🌠
 
 ---
+
+🌍 **Deployment:**
+The production app is live!
+
+Frontend (Next.js): Deployed on [Vercel](https://astro-chat-frontend.vercel.app)
+Backend (Node.js/Express): Deployed on [Render](https://node-is.onrender.com)
+You can access the chat platform at the Vercel URL above. The frontend communicates securely with the backend API and Socket.io server hosted on Render.
+
 
 ## 🛠️ Tech Stack
 
