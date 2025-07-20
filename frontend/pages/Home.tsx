@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Home.module.css";
-import { useSetGlobalState } from "./GlobalState";
+import { useSetGlobalState } from "../components/GlobalState";
 
 type StarryBackgroundProps = {};
 

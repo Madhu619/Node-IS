@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import io from "socket.io-client";
 import styles from "./ChatRoom.module.css";
-import { useGlobalState } from "../../pages/GlobalState";
+import { useGlobalState } from "../GlobalState";
 
 const ChatRoom: React.FC = () => {
   const globalState = useGlobalState();
