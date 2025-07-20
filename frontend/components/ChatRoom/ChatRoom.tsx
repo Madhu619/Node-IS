@@ -31,7 +31,7 @@ const ChatRoom: React.FC = () => {
   useEffect(() => {
     if (!email) return;
     if (!socketRef.current) {
-      socketRef.current = io("http://localhost:4000", {
+      socketRef.current = io("https://node-is.onrender.com", {
         query: { user: email },
       });
       socketRef.current.on("chat history", (msgs: MessageType[]) => {
