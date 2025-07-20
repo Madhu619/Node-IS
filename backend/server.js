@@ -31,9 +31,9 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  //"https://<>.vercel.app", Update Vercel domain
+  "https://node-is.onrender.com",
   "http://localhost:3000",
-  //"https://your-heroku-app.herokuapp.com", //Add your Heroku app domain here
+  //"https://<>.vercel.app", // Add your Vercel frontend domain here if needed
 ];
 
 const server = http.createServer(app);
